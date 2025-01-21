@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d Images</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1f1f1;
+        }
+        .box{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            animation: animate 20s linear infinite;
+        }
+       
+         @keyframes animate{
+            0%,100%{
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            12.5%{
+                transform: rotateX(0deg) rotateY(45deg);
+            }
+            25%{
+                transform: rotateX(0deg) rotateY(90deg);
+            }
+            37.5%{
+                transform: rotateX(0deg) rotateY(135deg);
+            }
+            50%{
+                transform: rotateX(0deg) rotateY(180deg);
+            }
+            62.5%{
+                transform: rotateX(0deg) rotateY(225deg);
+            }
+            75%{
+                transform: rotateX(0deg) rotateY(270deg);
+            }
+            87.5%{
+                transform: rotateX(0deg) rotateY(315deg);
+            }
+        }
+/* @keyframes animate{
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+} */
+        .box span{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+           top: 0;
+              left: 0;
+              transform-origin: center;
+              transform-style: preserve-3d;
+              transform: rotateY(calc(var(--i) * 45deg) )translateZ(400px);
+              -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+        }
+        .box span img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.5s;
+        }
+</style>
+</head>
+<body>
+    <div class="box">
+        <span style="--i:1"> <img src="./animls img/pic1.jpg" alt=""></span>
+        <span style="--i:2"> <img src="./animls img/pic2.jpg" alt=""></span>
+        <span style="--i:3"> <img src="./animls img/pic3.jpg" alt=""></span>
+        <span style="--i:4"> <img src="./animls img/pic4.jpg" alt=""></span>
+        <span style="--i:5"> <img src="./animls img/pic5.jpg" alt=""></span>
+        <span style="--i:6"> <img src="./animls img/pic6.jpg" alt=""></span>
+        <span style="--i:7"> <img src="./animls img/pic7.jpg" alt=""></span>
+        <span style="--i:8"> <img src="./animls img/pic8.jpg" alt=""></span>
+
+    </div>
+    
+</body>
+</html>
